@@ -1,7 +1,7 @@
 # ip-retreiver-telepot
 A simple and effective way to discover the Global IP of your domestic Raspbery pi server when you're not at home and don't want to spend money in fixed IP or DNS services.
 
-It creates a full-time background service at your Pi Server which anwsers for your mobile commands all the time and retrieve the programmed function in the script.
+It creates a full-time background service at your Pi Server which anwsers for your mobile commands all the time and returns the values for the programmed function in the script.
 
 Therefore, it's a base for ANY KIND of remote controlled aplications using a telegram bot, just need to implement the actions on the .py file.
 
