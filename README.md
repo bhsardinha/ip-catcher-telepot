@@ -5,7 +5,7 @@ It creates a full-time background service at your Pi Server which anwsers for yo
 
 Therefore, it's a base for ANY KIND of remote controlled aplications using a telegram bot, just need to implement the actions on the .py file.
 
-Created using the "Telegram Bot", the "Telepot" Raspbery Pi/Raspbian Python Package, an adapted version of the "Set Up Telegram Bot on Raspberry Pi by NickL17" Instructables.com tutorial and the https://www.ipify.org/ API.
+Created using the "Telegram Bot", the "Telepot" Raspbery Pi/Raspbian Python Package, an adapted version of the "Set Up Telegram Bot on Raspberry Pi by NickL17" Instructables.com tutorial and the https://www.ipify.org API.
 
 
 **INSTALATION STEPS:**
