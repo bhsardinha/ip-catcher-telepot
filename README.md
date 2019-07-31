@@ -27,9 +27,9 @@ Edit the script changing the **TOKEN HERE** field with your Telegram Token (you 
 
 **4 - Create a service script:**
 
-Save the "telegram_bot.service" file inside the raspberry services default folder: 
+Save the "telegram.service" file inside the raspberry services default folder: 
  
-    /etc/systemd/system
+    /lib/systemd/system
   
 Edit it's [Service] section accordingly, changing the *PyScriptAdressHere* for the real local adress to the script.
 
@@ -37,7 +37,7 @@ Edit it's [Service] section accordingly, changing the *PyScriptAdressHere* for t
 
 Run the following line on your command prompt:
 
-    sudo systemctl enable telegram_bot.service
+    sudo systemctl enable telegram.service
     
 It should put it auto-running in every boot of your RaspPi. 
 
