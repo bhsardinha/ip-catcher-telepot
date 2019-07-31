@@ -21,9 +21,9 @@ Created using the "Telegram Bot", the "Telepot" Raspbery Pi/Raspbian Python Pack
     sudo apt-get install python-pip
     sudo pip install telepot
 
-**3 - Save the .py file inside your RaspberryPi:**
+**3 - Save the ipbot.py file inside your RaspberryPi:**
 
-Edit the script changing the **TOKEN HERE** field for your Telegram Token (you can use the web version of the App to Copy & Paste it)
+Edit the script changing the **TOKEN HERE** field with your Telegram Token (you can use the web version of the App to Copy & Paste it).
 
 **4 - Create a service script:**
 
