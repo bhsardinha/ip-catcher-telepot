@@ -1,4 +1,4 @@
-# ip-retreiver-telepot
+# Teleport Bot as a Full-time background service
 A simple and effective way to discover the Global IP of your domestic Raspbery pi server when you're not at home and don't want to spend money in fixed IP or DNS services.
 
 It creates a full-time background service at your Pi Server which anwsers for your mobile commands all the time and returns the values for the programmed function in the script.
