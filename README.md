@@ -8,7 +8,7 @@ Therefore, it's a base for ANY KIND of remote controlled aplications using a tel
 Created using the <a href="https://core.telegram.org/bots">Telegram Bot</a>, the <a href="https://github.com/nickoala/telepot">Telepot</a> Raspbery Pi/Raspbian Python Package, an adapted version of the <a href="https://www.instructables.com/id/Set-up-Telegram-Bot-on-Raspberry-Pi/" title="Set Up Telegram Bot on Raspberry Pi">"Set Up Telegram Bot on Raspberry Pi by NickL17"</a> tutorial and the <a href="http://ipify.org/">ipify.org API</a>.
 
 
-**INSTALATION STEPS:**
+## Instalation Steps:
 
 **1 - Configure your telegram bot as taught in the mentioned tutorial:**
 
@@ -23,15 +23,15 @@ Created using the <a href="https://core.telegram.org/bots">Telegram Bot</a>, the
 
 **3 - Save the ipbot.py file inside your RaspberryPi:**
 
-Edit the script changing the **TOKEN HERE** field with your Telegram Token (you can use the web version of the App to Copy & Paste it).
+Edit the script changing the **```TOKEN HERE```** field with your Telegram Token (you can use the web version of the App to Copy & Paste it).
 
 **4 - Create a service script:**
 
-Save the "telegram.service" file inside the raspberry services default folder: 
+Save the ```"telegram.service"``` file inside the raspberry services default folder: 
  
     /lib/systemd/system
   
-Edit it's [Service] section accordingly, changing the *PyScriptAdressHere* for the real local adress to the script.
+Edit it's [Service] section accordingly, changing the *```PyScriptAdressHere```* for the real local adress to the script.
 
 **5 - Turn it into a full-time background running service:**
 
