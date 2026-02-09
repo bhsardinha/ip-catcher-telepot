@@ -1,23 +1,30 @@
-import time
-import telepot
-from telepot.loop import MessageLoop
+import asyncio
+from telegram import Update
+from telegram.ext import Application, CommandHandler, ContextTypes
 from requests import get
 
-def handle(msg):
-    chat_id = msg['chat']['id']
-    command = msg['text']
+async def ip_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Responds with the public IP when receiving /ip command"""
+    ip = get('https://api.ipify.org').text
+    await update.message.reply_text(f'My Mac Server IP: {ip}')
+    print(f'Sent IP {ip} to user {update.effective_user.id}')
 
-    print 'Got command: %s' % command
+async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Responds to /start command"""
+    await update.message.reply_text('Bot is active! Use /ip to see the IP address.')
 
-    if command == '/ip':
-        ip = get('https://api.ipify.org').text
-        bot.sendMessage(chat_id,'My Pi Server IP: {}'.format(ip))
+def main():
+    # Create the Application with your token
+    # Replace TOKEN_HERE with your actual Telegram Bot token
+    app = Application.builder().token('TOKEN_HERE').build()
+    
+    # Add command handlers
+    app.add_handler(CommandHandler('ip', ip_command))
+    app.add_handler(CommandHandler('start', start_command))
+    
+    # Start the bot
+    print('IP Bot is running...')
+    app.run_polling(allowed_updates=Update.ALL_TYPES)
 
-"""Replace the capital sentence below with your unique real telegram bot token"""
-bot = telepot.Bot('TOKEN HERE')
-
-MessageLoop(bot, handle).run_as_thread()
-print 'I am listening ...'
-
-while 1:
-    time.sleep(10)
+if __name__ == '__main__':
+    main()
