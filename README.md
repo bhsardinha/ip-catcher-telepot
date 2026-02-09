@@ -24,9 +24,9 @@ macOS comes with Python, but you may need to install pip3 if you don't have it. 
 pip3 install python-telegram-bot requests
 ```
 
-**3 - Create the ip.py script:**
+**3 - Create the ipbot.py script:**
 
-Save the `ip.py` file in your home directory (`/Users/yourusername/`). Edit the script and replace the token with your actual Telegram Bot token.
+Save the `ipbot.py` file in your home directory (`/Users/yourusername/`). Edit the script and replace `TOKEN_HERE` with your actual Telegram Bot token.
 
 **4 - Create the LaunchAgent directory (if it doesn't exist):**
 
@@ -36,16 +36,16 @@ mkdir -p ~/Library/LaunchAgents
 
 **5 - Create a launchd service plist file:**
 
-Save the `com.yourusername.telepot.plist` file inside:
+Save the `com.username.telepot.plist` file inside:
 
 ```
 ~/Library/LaunchAgents/
 ```
 
 Edit the plist file accordingly, changing:
-- `yourusername` to your actual macOS username
+- `username` to your actual macOS username (appears in 3 places: the Label, and both file paths)
 - `/usr/local/bin/python3` to your actual Python 3 path (find it with `which python3`)
-- Verify the path to `ip.py` matches your file location
+- Verify the path to `ipbot.py` matches your file location
 
 **6 - Create logs directory:**
 
@@ -55,22 +55,24 @@ mkdir -p ~/logs
 
 **7 - Turn it into a full-time background service:**
 
-Run the following command to load and start the service:
+Run the following command to load and start the service (replace `username` with your actual username):
 
 ```bash
-launchctl load ~/Library/LaunchAgents/com.yourusername.telepot.plist
+launchctl load ~/Library/LaunchAgents/com.username.telepot.plist
 ```
 
 The service will auto-run on every boot of your Mac.
 
 **Managing the service:**
 
+**Note:** In all commands below, replace `username` with your actual macOS username.
+
 ```bash
 # Start the service
-launchctl start com.yourusername.telepot
+launchctl start com.username.telepot
 
 # Stop the service
-launchctl stop com.yourusername.telepot
+launchctl stop com.username.telepot
 
 # Check if it's running
 launchctl list | grep telepot
@@ -80,7 +82,7 @@ tail -f ~/logs/telepot.log
 tail -f ~/logs/telepot_error.log
 
 # Unload (disable) the service
-launchctl unload ~/Library/LaunchAgents/com.yourusername.telepot.plist
+launchctl unload ~/Library/LaunchAgents/com.username.telepot.plist
 ```
 
 To confirm it works, send the `/ip` command from your phone and receive your Mac's Global IP address.
