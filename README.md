@@ -1,5 +1,7 @@
 # Telegram Bot as a Full-time Background Service on macOS
 
+> **Note:** This approach was tested and confirmed working in February 2026 on macOS using Python 3.13 and the latest python-telegram-bot library.
+
 A simple and effective way to discover the Global IP of your Mac Server when you're not at home and don't want to spend money on fixed IP or DNS services.
 
 It creates a full-time background service on your Mac which answers your mobile commands all the time and returns the values for the programmed functions in the script.
